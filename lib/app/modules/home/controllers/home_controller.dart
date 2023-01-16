@@ -7,9 +7,9 @@ class HomeController extends GetxController {
   void checkToken() async {
     sharedPreferences().then((value) => {
         if (value.getString("token") != null && value.getString("token")!.isNotEmpty) {
-            Get.toNamed(Routes.MAKANAN)
+            Get.offAllNamed(Routes.MAKANAN)
           } else {
-            Get.toNamed(Routes.LOGIN)
+            Get.offAllNamed(Routes.LOGIN)
          }
     });
    

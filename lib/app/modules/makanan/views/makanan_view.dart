@@ -12,7 +12,6 @@ class MakananView extends GetView<MakananController> {
 
   @override
   Widget build(BuildContext context) {
-    print("============/ ${controller.makanan.length}");
     return Scaffold(
         appBar: AppBar(
           title: const Text('HomeView'),
@@ -56,7 +55,8 @@ class MakananView extends GetView<MakananController> {
                       ),
                     )),
               ),
-            )),
+            )
+          ),
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(20),
           child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
@@ -64,11 +64,12 @@ class MakananView extends GetView<MakananController> {
               padding: const EdgeInsets.all(10),
               child: FloatingActionButton(
                 onPressed: () => Get.toNamed(Routes.ADD),
-                child: Icon(Icons.add),
+                child: Icon(Icons.add_card),
                 heroTag: "FABadd",
               ),
             ),
           ]),
-        ));
+        )
+      );
   }
 }

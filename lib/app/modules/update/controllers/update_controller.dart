@@ -22,7 +22,6 @@ class UpdateController extends GetxController {
     harga.addListener(() {
       hargau.value = harga.text;
     });
-    print("aaa $nameu $nama");
     super.onInit();
   }
 

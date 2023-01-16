@@ -42,16 +42,16 @@ class RegisterController extends GetxController {
                 Config.snackbar(
                     "Register Successfully",
                     "Please Check your email to activate your account",
-                    const Color.fromARGB(255, 187, 255, 124))
+                    Color.fromARGB(255, 18, 48, 214))
               }
             else
               {
                 Config.snackbar(
-                    "Failed", "Something wrong from your email", Colors.red)
+                    "Failed", "Something wrong from your email", Color.fromARGB(255, 247, 42, 27))
               }
           });
     } catch (e) {
-      print("kkk ${e.toString()}");
+      print("${e.toString()}");
     }
   }
 

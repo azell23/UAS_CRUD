@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_uas/app/routes/app_pages.dart';
@@ -14,16 +13,16 @@ class Auth extends GetxController {
   void login(String email, String password) async {
     try {
       await auth.signInWithEmailAndPassword(email: email, password: password);
-      Config.snackbar("Hai...", "Selamat Datang", Colors.green);
+      Config.snackbar("Selamat Datang", "Selamat Datang", Color.fromARGB(255, 42, 158, 46));
       Get.offAllNamed(Routes.HOME);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         Config.snackbar(
-            "Ada yang tidak beres", "no user for that email", Colors.red);
+            "user tidak ditemukan","user not found", Color.fromARGB(255, 245, 39, 25));
         print("no user for that email");
       } else if (e.code == 'wrong-password') {
         Config.snackbar(
-            "Ada yang tidak beres", "password salah", Colors.red);
+            "password salah", "password salah", Color.fromARGB(255, 240, 46, 33));
         print("password salah");
       }
     }
@@ -37,12 +36,12 @@ class Auth extends GetxController {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         Config.snackbar(
-            "Ada yang tidak beres", "The password is to weak", Colors.red);
+            "Password salah", "The password is to weak", Colors.red);
         print("The password is to weak");
       } else if (e.code == 'email-already-in-use') {
          Config.snackbar(
-            "Ada yang tidak beres", "The account already exists fot that email", Colors.red);
-        print('The account already exists fot that email');
+            "Email sudah digunakan", "The account already exists fot that email", Colors.red);
+        print('Email sudah digunakan');
       }
     } catch (e) {
       print(e);

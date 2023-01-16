@@ -7,10 +7,10 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    controller.timerSplashScreen(2);
+    controller.timerSplashScreen(3);
     return Scaffold(
       body: Center(
-          child: Image.asset("assets/images/logoflutter.png",
+          child: Image.asset("assets/images/flutter.png",
               height: 200, width: 200)),
     );
   }

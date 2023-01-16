@@ -31,7 +31,7 @@ class LoginController extends GetxController {
                 {
                   if (value.user!.emailVerified)
                     {
-                      Get.toNamed(Routes.MAKANAN),
+                      Get.offAllNamed(Routes.MAKANAN),
                       addToken(value.user!.uid),
                       sharedPreferences().then((values) => values.setString("name", value.user!.email!
                                   .replaceFirst("@gmail.com", ""))),
@@ -39,16 +39,16 @@ class LoginController extends GetxController {
                       Config.snackbar(
                           "Success Login",
                           "Hallo ${value.user!.email!.replaceFirst("@gmail.com", "")}",
-                          const Color.fromARGB(255, 102, 253, 107))
+                          Color.fromARGB(255, 13, 102, 218))
                     }
                   else
                     {
                       Config.snackbar(
-                          "Failed", "Email is not verified", Colors.red)
+                          "Failed", "Email is not verified", Color.fromARGB(255, 219, 31, 18))
                     }
                 }
               else
-                {Config.snackbar("Failed", "User is null", Colors.red)}
+                {Config.snackbar("Failed", "User is null", Color.fromARGB(255, 218, 34, 20))}
             });
   }
 

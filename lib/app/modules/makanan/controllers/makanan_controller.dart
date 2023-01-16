@@ -13,7 +13,6 @@ class MakananController extends GetxController {
     collectionReference = firebaseFireStore.collection('makanan');
     makanan.bindStream(readData());
     super.onInit();
-    print("makanan $makanan");
   }
 
 
@@ -26,7 +25,7 @@ class MakananController extends GetxController {
     void deleteData(String? id) {
     collectionReference.doc(id).delete().whenComplete(() {
       print("Sukses Hapus");
-      Get.toNamed(Routes.MAKANAN);
+      Get.offAllNamed(Routes.MAKANAN);
     });
   }
 

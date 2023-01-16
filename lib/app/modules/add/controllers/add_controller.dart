@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:my_uas/app/routes/app_pages.dart';
-
-import '../../../model/Makanan.dart';
 import '../../../util/utils.dart';
 
 class AddController extends GetxController {
@@ -29,7 +27,7 @@ final  firebaseFireStore = FirebaseFirestore.instance;
         }).whenComplete((){
           Config.snackbar("Success", "Tambah Data", Colors.green);
           print("Suksses");
-          Get.toNamed(Routes.MAKANAN);
+          Get.offAllNamed(Routes.MAKANAN);
         }).catchError((e) => print("error $e"));
       }
       

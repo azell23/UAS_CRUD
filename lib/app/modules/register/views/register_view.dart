@@ -33,7 +33,7 @@ class RegisterView extends GetView<RegisterController> {
                       "Jangan lupa bismillah",
                       15,
                       FontWeight.normal,
-                      Colors.black),
+                      Color.fromARGB(255, 15, 15, 15)),
                 ),
                 const SizedBox(height: 10),
                 const SizedBox(height: 10),
